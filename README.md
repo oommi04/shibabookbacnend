@@ -57,7 +57,7 @@ $ go test ./... -v
 
 
 #### Entity
-![alt text](https://github.com/oommi04/shibabookbackend/blob/master/entity_schema.jpg?raw=true)
+![alt text](https://github.com/oommi04/shibabookbacnend/blob/master/entity_schema.jpg?raw=true)
 
 #### Sequnce Diagram
-![alt text](https://github.com/oommi04/shibabookbackend/blob/master/sequnce_diagram.png?raw=true)
+![alt text](https://github.com/oommi04/shibabookbacnend/blob/master/sequnce_diagram.png?raw=true)

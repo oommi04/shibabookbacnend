@@ -25,7 +25,7 @@ func Init(e *echo.Echo, u customerUsecase.CustomerUsecaseInterface) {
 	handler := customerHandler{
 		u,
 	}
-	e.POST("/customer", handler.Save)
+	e.POST("/customer/register", handler.Save)
 }
 
 func (h *customerHandler) Save(c echo.Context) error {
@@ -43,7 +43,7 @@ func (h *customerHandler) Save(c echo.Context) error {
 		ctx = context.Background()
 	}
 
-	err = h.usecase.Save(ctx, &data)
+	err = h.usecase.Register(ctx, &data)
 
 	if err != nil {
 		return c.JSON(errorStatus.GetStatusCode(err), responseError{Message: err.Error()})

@@ -9,7 +9,7 @@ import (
 
 type CustomerUsecaseInterface interface {
 	GetByIdentificationNumber(ctx context.Context, idn string) (*customerDomain.Customer, error)
-	Save(ctx context.Context, info *customerDomain.Customer) error
+	Register(ctx context.Context, info *customerDomain.Customer) error
 	GetById(ctx context.Context, id string) (*customerDomain.Customer, error)
 }
 
@@ -48,13 +48,13 @@ func (p *customerUsecase) GetById(ctx context.Context, id string) (*customerDoma
 	return resp, nil
 }
 
-func (p *customerUsecase) Save(ctx context.Context, info *customerDomain.Customer) error {
+func (p *customerUsecase) Register(ctx context.Context, info *customerDomain.Customer) error {
 	ctx, cancel := context.WithTimeout(ctx, p.contextTimeout)
 	defer cancel()
 
 	checkCustomerExist, err := p.GetByIdentificationNumber(ctx, info.IdentificationNumber)
 
-	if checkCustomerExist.IdentificationNumber != "" {
+	if err != customerDomain.ErrorIdentificationNotFound && checkCustomerExist.IdentificationNumber != "" {
 		return customerDomain.ErrorIdentificationNumberWasUsed
 	}
 

@@ -141,11 +141,10 @@ func (p *orderUsecase) CheckOut(ctx context.Context, id string) (*orderDomain.Or
 	//create invoice
 	if data.Customer.ID != "" {
 		customer, err := p.customerUsecase.GetById(ctx, data.Customer.ID)
-		data.Customer = *customer
-
 		if err != nil {
 			return nil, err
 		}
+		data.Customer = *customer
 
 		data.Invoice = invoiceDomain.Invoice{
 			Path: "google.com",

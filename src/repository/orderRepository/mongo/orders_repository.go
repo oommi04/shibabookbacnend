@@ -70,8 +70,21 @@ func (p *orderRepository) List(ctx context.Context) ([]*orderDomain.Order, error
 			})
 		}
 
+
 		invoice := invoiceDomain.Invoice{
 			ID: data.InvoiceID.Hex(),
+		}
+
+		if data.InvoiceID.Hex() == "000000000000000000000000" {
+			invoice.ID= ""
+		}
+
+		customer := customerDomain.Customer{
+			ID: data.CustomerID.Hex(),
+		}
+
+		if data.CustomerID.Hex() == "000000000000000000000000" {
+			customer.ID= ""
 		}
 
 		resp := &orderDomain.Order{
@@ -81,6 +94,7 @@ func (p *orderRepository) List(ctx context.Context) ([]*orderDomain.Order, error
 			Status:      data.Status,
 			DateTime:    data.DateTime,
 			Products:    products,
+			Customer: customer,
 			Invoice:     invoice,
 			Discount:    data.Discount,
 			NET:         data.NET,
@@ -121,8 +135,16 @@ func (p *orderRepository) GetById(ctx context.Context, id string) (*orderDomain.
 		ID: data.InvoiceID.Hex(),
 	}
 
+	if data.InvoiceID.Hex() == "000000000000000000000000" {
+		invoice.ID= ""
+	}
+
 	customer := customerDomain.Customer{
 		ID: data.CustomerID.Hex(),
+	}
+
+	if data.CustomerID.Hex() == "000000000000000000000000" {
+		customer.ID= ""
 	}
 
 	resp := orderDomain.Order{

@@ -7,4 +7,5 @@ type Customer struct {
 	IdentificationNumber string `json:"identificationNumber,omitempty"`
 	Mail                 string `json:"mail,omitempty"`
 	Point                int    `json:"point,omitempty"`
+	//payment
 }

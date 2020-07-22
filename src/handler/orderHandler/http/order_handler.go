@@ -14,8 +14,8 @@ type responseError struct {
 }
 
 type body struct {
-	OrderID string `json:"orderId,omitempty"`
-	Order orderDomain.Order `json:"order,omitempty"`
+	OrderID string            `json:"orderId,omitempty"`
+	Order   orderDomain.Order `json:"order,omitempty"`
 }
 
 type orderHandler struct {

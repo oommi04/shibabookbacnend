@@ -46,12 +46,12 @@ func (client *HarryShopClient) GetHarryBook() ([]*productDomain.Product, error) 
 
 	productEntity := []*productDomain.Product{}
 
-	for _,item := range respBody.Books {
+	for _, item := range respBody.Books {
 		productEntity = append(productEntity, &productDomain.Product{
 			Price: float32(common.StringToInt(item.Price)),
 			Image: item.Cover,
-			Name: item.Title,
-			From: "HarryShop",
+			Name:  item.Title,
+			From:  "HarryShop",
 		})
 	}
 

@@ -1,12 +1,12 @@
 package http
 
 import (
+	"context"
 	"github.com/labstack/echo"
 	"github.com/oommi04/shibabookbackend/src/domains/customerDomain"
 	"github.com/oommi04/shibabookbackend/src/usecase/customerUsecase"
 	"github.com/oommi04/shibabookbackend/src/utils/errorStatus"
 	"net/http"
-	"context"
 )
 
 type responseError struct {
@@ -27,7 +27,6 @@ func Init(e *echo.Echo, u customerUsecase.CustomerUsecaseInterface) {
 	}
 	e.POST("/customer", handler.Save)
 }
-
 
 func (h *customerHandler) Save(c echo.Context) error {
 	var data customerDomain.Customer

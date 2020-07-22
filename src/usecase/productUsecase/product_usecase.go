@@ -13,7 +13,7 @@ type ProductUsecaseInterface interface {
 }
 
 type productUsecase struct {
-	productRepo   _productRepository.ProductRepositoryInterface
+	productRepo    _productRepository.ProductRepositoryInterface
 	contextTimeout time.Duration
 }
 
@@ -35,7 +35,7 @@ func (p *productUsecase) List(ctx context.Context) ([]*productDomain.Product, er
 	return resps, nil
 }
 
-func (p *productUsecase) Save(ctx context.Context, info *productDomain.Product) error{
+func (p *productUsecase) Save(ctx context.Context, info *productDomain.Product) error {
 	ctx, cancel := context.WithTimeout(ctx, p.contextTimeout)
 	defer cancel()
 
@@ -45,7 +45,7 @@ func (p *productUsecase) Save(ctx context.Context, info *productDomain.Product) 
 		return err
 	}
 
-	if checkProductExist.Name != "" {
+	if err != productDomain.ErrorProductNotFoundByNameAndFrom && checkProductExist.Name != "" {
 		return productDomain.ErrorProductExist
 	}
 

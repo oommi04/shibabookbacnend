@@ -17,12 +17,12 @@ func (suite *HarryShopServiceSuite) TestHarryShopClient_GetHarryBook_Success() {
 		resp.SetStatusCode(http.StatusOK)
 
 		respBody := HarryBookList{Books: []*Books{
-				{
-					ID: "9781408855652",
-					Cover: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855652.jpg",
-					Price: "350",
-					Title: "Harry Potter and the Philosopher's Stone (I)",
-				},
+			{
+				ID:    "9781408855652",
+				Cover: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855652.jpg",
+				Price: "350",
+				Title: "Harry Potter and the Philosopher's Stone (I)",
+			},
 		}}
 		creatorJSON, _ := json.Marshal(respBody)
 		resp.SetBody(creatorJSON)

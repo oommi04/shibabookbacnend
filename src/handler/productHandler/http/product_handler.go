@@ -13,6 +13,11 @@ type responseError struct {
 	Message string `json:"message"`
 }
 
+type body struct {
+	ProductId string                `json:"productId,omitempty"`
+	Product   productDomain.Product `json:"product,omitempty"`
+}
+
 type productHandler struct {
 	usecase productUsecase.ProductUsecaseInterface
 }
@@ -42,12 +47,13 @@ func (h *productHandler) List(c echo.Context) error {
 
 func (h *productHandler) Save(c echo.Context) error {
 	var data productDomain.Product
-	err := c.Bind(&data)
+	var body body
+	err := c.Bind(&body)
+	data = body.Product
 
 	if err != nil {
 		return c.JSON(http.StatusUnprocessableEntity, err.Error())
 	}
-
 
 	ctx := c.Request().Context()
 	if ctx == nil {

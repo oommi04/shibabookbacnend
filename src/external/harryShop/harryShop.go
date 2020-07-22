@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	ErrorUnableCreateRequest                    = errors.New("unable create request from path")
-	ErrorUnableRequestGetHarryBook          = errors.New("unable request get harry book")
+	ErrorUnableCreateRequest       = errors.New("unable create request from path")
+	ErrorUnableRequestGetHarryBook = errors.New("unable request get harry book")
 )
 
 type HarryShopClientInterface interface {

@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func StringToInt(str string) int{
+func StringToInt(str string) int {
 	i1, err := strconv.Atoi(str)
 
 	if err != nil {

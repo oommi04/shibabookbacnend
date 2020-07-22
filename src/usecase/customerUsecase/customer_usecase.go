@@ -48,7 +48,7 @@ func (p *customerUsecase) GetById(ctx context.Context, id string) (*customerDoma
 	return resp, nil
 }
 
-func (p *customerUsecase) Save(ctx context.Context, info *customerDomain.Customer) error{
+func (p *customerUsecase) Save(ctx context.Context, info *customerDomain.Customer) error {
 	ctx, cancel := context.WithTimeout(ctx, p.contextTimeout)
 	defer cancel()
 

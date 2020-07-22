@@ -13,18 +13,17 @@ import (
 type Product struct {
 	ID            primitive.ObjectID `bson:"_id,omitempty"`
 	Name          string             `bson:"name,omitempty"`
-	Price         float32             `bson:"price,omitempty"`
+	Price         float32            `bson:"price,omitempty"`
 	QuantityStock string             `bson:"quantityStock,omitempty"`
 	Description   string             `bson:"description,omitempty"`
 	From          string             `bson:"from,omitempty"`
 	Status        string             `bson:"status,omitempty"`
-	DateTime      *time.Time      `bson:"dateTime,omitempty"`
+	DateTime      *time.Time         `bson:"dateTime,omitempty"`
 	Image         string             `bson:"image,omitempty"`
-	BarCode string `bson:"barCode,omitempty"`
+	BarCode       string             `bson:"barCode,omitempty"`
 	CreatedAt     time.Time          `bson:"created_at" json:"created_at,omitempty"`
 	UpdatedAt     time.Time          `bson:"updated_at" json:"updated_at,omitempty"`
 }
-
 
 type productRepository struct {
 	Collection *mongo.Collection
@@ -94,7 +93,7 @@ func (p *productRepository) ListByNameAndFrom(ctx context.Context, name string, 
 			Status:        data.Status,
 			DateTime:      data.DateTime,
 			Image:         data.Image,
-			BarCode: data.BarCode,
+			BarCode:       data.BarCode,
 		}
 		resps = append(resps, resp)
 	}
@@ -108,10 +107,10 @@ func (p *productRepository) GetByNameAndFrom(ctx context.Context, name string, f
 	err := p.Collection.FindOne(ctx, bson.D{{"name", name}, {"from", from}}).Decode(&data)
 
 	if err == mongo.ErrNoDocuments {
-		return nil,productDomain.ErrorProductNotFoundByNameAndFrom
+		return nil, productDomain.ErrorProductNotFoundByNameAndFrom
 	}
 
-	if err != nil  {
+	if err != nil {
 		return nil, err
 	}
 
@@ -142,7 +141,7 @@ func (p *productRepository) Save(ctx context.Context, info *productDomain.Produc
 		Status:        info.Status,
 		DateTime:      info.DateTime,
 		Image:         info.Image,
-		BarCode: info.BarCode,
+		BarCode:       info.BarCode,
 		CreatedAt:     time.Now(),
 		UpdatedAt:     time.Now(),
 	}

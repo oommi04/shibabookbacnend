@@ -7,8 +7,8 @@ import (
 	"github.com/oommi04/shibabookbackend/src/usecase/productUsecase"
 )
 
-func SetUpHarryShop () harryShop.HarryShopClientInterface{
-	return harryShop.New("https://api.jsonbin.io/b",5)
+func SetUpHarryShop() harryShop.HarryShopClientInterface {
+	return harryShop.New("https://api.jsonbin.io/b", 5)
 }
 
 func GetHarryBook(p productUsecase.ProductUsecaseInterface, h harryShop.HarryShopClientInterface) {

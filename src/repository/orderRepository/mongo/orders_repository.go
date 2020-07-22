@@ -25,11 +25,11 @@ type Order struct {
 	ProductsID  []*ProductAmount   `bson:"productsId,omitempty"`
 	//StaffID primitive.ObjectID `json:"staffId,omitempty"`
 	CustomerID primitive.ObjectID `bson:"customerId,omitempty"`
-	TotalPrice float32                `bson:"totalPrice,omitempty"`
-	Discount float32	`bson:"discount,omitempty"`
+	TotalPrice float32            `bson:"totalPrice,omitempty"`
+	Discount   float32            `bson:"discount,omitempty"`
 	InvoiceID  primitive.ObjectID `bson:"invoiceId,omitempty"`
-	DateTime   *time.Time          `bson:"time,omitempty"`
-	NET float32 `bson:"net,omitempty"`
+	DateTime   *time.Time         `bson:"time,omitempty"`
+	NET        float32            `bson:"net,omitempty"`
 	CreatedAt  time.Time          `bson:"created_at" json:"created_at,omitempty"`
 	UpdatedAt  time.Time          `bson:"updated_at" json:"updated_at,omitempty"`
 }
@@ -61,7 +61,7 @@ func (p *orderRepository) List(ctx context.Context) ([]*orderDomain.Order, error
 	for _, data := range datas {
 
 		products := []*orderDomain.ProductAmount{}
-		for _,pItem := range data.ProductsID {
+		for _, pItem := range data.ProductsID {
 			products = append(products, &orderDomain.ProductAmount{
 				Amount: pItem.Amount,
 				Product: productDomain.Product{
@@ -75,15 +75,15 @@ func (p *orderRepository) List(ctx context.Context) ([]*orderDomain.Order, error
 		}
 
 		resp := &orderDomain.Order{
-			ID: data.ID.Hex(),
+			ID:          data.ID.Hex(),
 			TotalPrice:  data.TotalPrice,
 			Description: data.Description,
 			Status:      data.Status,
 			DateTime:    data.DateTime,
-			Products: products,
-			Invoice: invoice,
-			Discount: data.Discount,
-			NET: data.NET,
+			Products:    products,
+			Invoice:     invoice,
+			Discount:    data.Discount,
+			NET:         data.NET,
 			//StaffID: staffId,
 		}
 		resps = append(resps, resp)
@@ -92,23 +92,23 @@ func (p *orderRepository) List(ctx context.Context) ([]*orderDomain.Order, error
 	return resps, nil
 }
 
-func (p *orderRepository) GetById(ctx context.Context,id string) (*orderDomain.Order, error) {
+func (p *orderRepository) GetById(ctx context.Context, id string) (*orderDomain.Order, error) {
 	var data Order
 
 	_id, _ := primitive.ObjectIDFromHex(id)
 
-	err := p.Collection.FindOne(ctx, bson.M{"_id":_id}).Decode(&data)
+	err := p.Collection.FindOne(ctx, bson.M{"_id": _id}).Decode(&data)
 
 	if err == mongo.ErrNoDocuments {
 		return nil, orderDomain.ErrorOrderIdNotFound
 	}
 
-	if err != nil  {
+	if err != nil {
 		return nil, err
 	}
 
 	products := []*orderDomain.ProductAmount{}
-	for _,pItem := range data.ProductsID {
+	for _, pItem := range data.ProductsID {
 		products = append(products, &orderDomain.ProductAmount{
 			Amount: pItem.Amount,
 			Product: productDomain.Product{
@@ -126,19 +126,18 @@ func (p *orderRepository) GetById(ctx context.Context,id string) (*orderDomain.O
 	}
 
 	resp := orderDomain.Order{
-		ID: data.ID.Hex(),
+		ID:          data.ID.Hex(),
 		TotalPrice:  data.TotalPrice,
 		Description: data.Description,
 		Status:      data.Status,
 		DateTime:    data.DateTime,
-		Products: products,
-		Customer: customer,
-		Invoice: invoice,
-		Discount: data.Discount,
-		NET: data.NET,
+		Products:    products,
+		Customer:    customer,
+		Invoice:     invoice,
+		Discount:    data.Discount,
+		NET:         data.NET,
 		//StaffID: staffId,
 	}
-
 
 	return &resp, nil
 }
@@ -162,8 +161,8 @@ func (p *orderRepository) Save(ctx context.Context, info *orderDomain.Order) err
 		Status:      info.Status,
 		DateTime:    info.DateTime,
 		ProductsID:  productsId,
-		Discount: info.Discount,
-		NET: info.NET,
+		Discount:    info.Discount,
+		NET:         info.NET,
 		//StaffID: staffId,
 		CustomerID: customerId,
 		CreatedAt:  time.Now(),
@@ -203,9 +202,9 @@ func (p *orderRepository) CheckOut(ctx context.Context, info *orderDomain.Order,
 		Status:      info.Status,
 		DateTime:    info.DateTime,
 		ProductsID:  productsId,
-		Discount: info.Discount,
-		NET: info.NET,
-		InvoiceID: invoiceId,
+		Discount:    info.Discount,
+		NET:         info.NET,
+		InvoiceID:   invoiceId,
 		//StaffID: staffId,
 		CustomerID: customerId,
 		UpdatedAt:  time.Now(),

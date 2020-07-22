@@ -6,7 +6,7 @@ import (
 )
 
 func TestUtils_IncludeString_Include(t *testing.T) {
-	strs := []string{"a","b","c","d"}
+	strs := []string{"a", "b", "c", "d"}
 	s := "b"
 	resp := IncludeString(strs, s)
 	expectResp := true
@@ -14,7 +14,7 @@ func TestUtils_IncludeString_Include(t *testing.T) {
 }
 
 func TestUtils_IncludeString_Not_Include(t *testing.T) {
-	strs := []string{"a","b","c","d"}
+	strs := []string{"a", "b", "c", "d"}
 	s := "e"
 	resp := IncludeString(strs, s)
 	expectResp := false

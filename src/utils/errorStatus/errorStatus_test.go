@@ -1,8 +1,8 @@
 package errorStatus
 
 import (
-	"github.com/stretchr/testify/assert"
 	"github.com/oommi04/backendtest/src/domains/doscg"
+	"github.com/stretchr/testify/assert"
 	"net/http"
 	"testing"
 )

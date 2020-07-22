@@ -22,6 +22,6 @@ func Test_Google_Service_Suite(t *testing.T) {
 
 func (suite *HarryShopServiceSuite) SetupTest() {
 	suite.fastHttp = &mocks.FastHttpClient{}
-	suite.service = New("localhost",  5).setHttpClient(suite.fastHttp)
-	suite.integrationService = New("https://api.jsonbin.io/b",  5)
+	suite.service = New("localhost", 5).setHttpClient(suite.fastHttp)
+	suite.integrationService = New("https://api.jsonbin.io/b", 5)
 }

@@ -1,8 +1,9 @@
 package errorStatus
 
 import (
-	"github.com/oommi04/backendtest/src/domains/doscg"
-	"github.com/oommi04/backendtest/src/external/harryShop"
+	"github.com/oommi04/shibabookbackend/src/domains/customerDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/orderDomain"
+	"github.com/oommi04/shibabookbackend/src/external/harryShop"
 	"net/http"
 )
 
@@ -11,13 +12,12 @@ func GetStatusCode(err error) int {
 		return http.StatusOK
 	}
 	switch err {
-	case doscg.ErrorUnableCreateRequest:
-	case doscg.ErrorAPIKeyInvalid:
-	case doscg.ErrorUnableRequestGoogleDirection:
 	case harryShop.ErrorUnableCreateRequest:
 	case harryShop.ErrorUnableRequestGetHarryBook:
 		return http.StatusInternalServerError
-	case doscg.ErrorUnableFindDirectionStartAndDestination:
+	case customerDomain.ErrorIdentificationNotFound:
+	case customerDomain.ErrorIdentificationNotFound:
+	case orderDomain.ErrorOrderIdNotFound:
 		return http.StatusNotFound
 	default:
 		return http.StatusInternalServerError

@@ -1,7 +1,7 @@
 package productRepository
 
 import (
-	"github.com/tkhamsila/shibabookbackend/src/domains/productDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/productDomain"
 	"context"
 )
 

@@ -1,10 +1,10 @@
 package orderDomain
 
 import (
-	"github.com/tkhamsila/backendtest/src/domains/customerDomain"
-	"github.com/tkhamsila/backendtest/src/domains/invoiceDomain"
-	"github.com/tkhamsila/backendtest/src/domains/productDomain"
-	"github.com/tkhamsila/backendtest/src/domains/staffDomain"
+	"github.com/oommi04/backendtest/src/domains/customerDomain"
+	"github.com/oommi04/backendtest/src/domains/invoiceDomain"
+	"github.com/oommi04/backendtest/src/domains/productDomain"
+	"github.com/oommi04/backendtest/src/domains/staffDomain"
 	"time"
 )
 

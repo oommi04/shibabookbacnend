@@ -3,9 +3,9 @@ package http
 import (
 	"context"
 	"github.com/labstack/echo"
-	"github.com/tkhamsila/shibabookbackend/src/domains/orderDomain"
-	"github.com/tkhamsila/shibabookbackend/src/usecase/orderUsecase"
-	"github.com/tkhamsila/shibabookbackend/src/utils/errorStatus"
+	"github.com/oommi04/shibabookbackend/src/domains/orderDomain"
+	"github.com/oommi04/shibabookbackend/src/usecase/orderUsecase"
+	"github.com/oommi04/shibabookbackend/src/utils/errorStatus"
 	"net/http"
 )
 

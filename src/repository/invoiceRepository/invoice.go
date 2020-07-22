@@ -1,7 +1,7 @@
 package invoiceRepository
 
 import (
-	"github.com/tkhamsila/shibabookbackend/src/domains/invoiceDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/invoiceDomain"
 	"context"
 )
 

@@ -2,8 +2,8 @@ package productUsecase
 
 import (
 	"context"
-	"github.com/tkhamsila/shibabookbackend/src/domains/productDomain"
-	_productRepository "github.com/tkhamsila/shibabookbackend/src/repository/productRepository"
+	"github.com/oommi04/shibabookbackend/src/domains/productDomain"
+	_productRepository "github.com/oommi04/shibabookbackend/src/repository/productRepository"
 	"time"
 )
 

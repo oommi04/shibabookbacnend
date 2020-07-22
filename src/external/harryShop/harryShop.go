@@ -2,8 +2,8 @@ package harryShop
 
 import (
 	"errors"
-	"github.com/tkhamsila/shibabookbackend/src/domains/productDomain"
-	"github.com/tkhamsila/shibabookbackend/src/drivers/fastHttpDriver"
+	"github.com/oommi04/shibabookbackend/src/domains/productDomain"
+	"github.com/oommi04/shibabookbackend/src/drivers/fastHttpDriver"
 	"github.com/valyala/fasthttp"
 )
 

@@ -1,8 +1,8 @@
 package mongo
 
 import (
-	"github.com/tkhamsila/shibabookbackend/src/domains/invoiceDomain"
-	_invoiceRepository "github.com/tkhamsila/shibabookbackend/src/repository/invoiceRepository"
+	"github.com/oommi04/shibabookbackend/src/domains/invoiceDomain"
+	_invoiceRepository "github.com/oommi04/shibabookbackend/src/repository/invoiceRepository"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"

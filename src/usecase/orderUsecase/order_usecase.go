@@ -2,13 +2,13 @@ package orderUsecase
 
 import (
 	"context"
-	"github.com/tkhamsila/shibabookbackend/src/domains/invoiceDomain"
-	"github.com/tkhamsila/shibabookbackend/src/domains/orderDomain"
-	_customerUsecase "github.com/tkhamsila/shibabookbackend/src/usecase/customerUsecase"
-	_invoiceRepository "github.com/tkhamsila/shibabookbackend/src/repository/invoiceRepository"
-	_orderRepository "github.com/tkhamsila/shibabookbackend/src/repository/orderRepository"
-	_productRepository "github.com/tkhamsila/shibabookbackend/src/repository/productRepository"
-	"github.com/tkhamsila/shibabookbackend/src/utils/common"
+	"github.com/oommi04/shibabookbackend/src/domains/invoiceDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/orderDomain"
+	_customerUsecase "github.com/oommi04/shibabookbackend/src/usecase/customerUsecase"
+	_invoiceRepository "github.com/oommi04/shibabookbackend/src/repository/invoiceRepository"
+	_orderRepository "github.com/oommi04/shibabookbackend/src/repository/orderRepository"
+	_productRepository "github.com/oommi04/shibabookbackend/src/repository/productRepository"
+	"github.com/oommi04/shibabookbackend/src/utils/common"
 	"time"
 )
 
@@ -161,7 +161,7 @@ func (p *orderUsecase) CheckOut(ctx context.Context, id string) (*orderDomain.Or
 	} else {
 		data.Invoice = invoiceDomain.Invoice{
 			Path: "google.com",
-			Mail: "tkhamsila@gmail.com",
+			Mail: "oommi04@gmail.com",
 		}
 	}
 

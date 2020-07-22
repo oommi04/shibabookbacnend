@@ -2,11 +2,11 @@ package mongo
 
 import (
 	"context"
-	"github.com/tkhamsila/shibabookbackend/src/domains/customerDomain"
-	"github.com/tkhamsila/shibabookbackend/src/domains/invoiceDomain"
-	"github.com/tkhamsila/shibabookbackend/src/domains/orderDomain"
-	"github.com/tkhamsila/shibabookbackend/src/domains/productDomain"
-	_orderRepository "github.com/tkhamsila/shibabookbackend/src/repository/orderRepository"
+	"github.com/oommi04/shibabookbackend/src/domains/customerDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/invoiceDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/orderDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/productDomain"
+	_orderRepository "github.com/oommi04/shibabookbackend/src/repository/orderRepository"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

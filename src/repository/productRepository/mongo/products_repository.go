@@ -2,8 +2,8 @@ package mongo
 
 import (
 	"context"
-	"github.com/tkhamsila/shibabookbackend/src/domains/productDomain"
-	_productRepository "github.com/tkhamsila/shibabookbackend/src/repository/productRepository"
+	"github.com/oommi04/shibabookbackend/src/domains/productDomain"
+	_productRepository "github.com/oommi04/shibabookbackend/src/repository/productRepository"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

@@ -2,8 +2,8 @@ package customerUsecase
 
 import (
 	"context"
-	"github.com/tkhamsila/shibabookbackend/src/domains/customerDomain"
-	_customerRepository "github.com/tkhamsila/shibabookbackend/src/repository/customerRepository"
+	"github.com/oommi04/shibabookbackend/src/domains/customerDomain"
+	_customerRepository "github.com/oommi04/shibabookbackend/src/repository/customerRepository"
 	"time"
 )
 

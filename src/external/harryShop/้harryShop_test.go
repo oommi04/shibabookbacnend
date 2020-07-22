@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/tkhamsila/shibabookbackend/src/drivers/fastHttpDriver/mocks"
+	"github.com/oommi04/shibabookbackend/src/drivers/fastHttpDriver/mocks"
 )
 
 type HarryShopServiceSuite struct {

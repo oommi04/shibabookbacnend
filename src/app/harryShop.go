@@ -2,9 +2,9 @@ package app
 
 import (
 	"context"
-	"github.com/tkhamsila/shibabookbackend/src/domains/productDomain"
-	"github.com/tkhamsila/shibabookbackend/src/external/harryShop"
-	"github.com/tkhamsila/shibabookbackend/src/usecase/productUsecase"
+	"github.com/oommi04/shibabookbackend/src/domains/productDomain"
+	"github.com/oommi04/shibabookbackend/src/external/harryShop"
+	"github.com/oommi04/shibabookbackend/src/usecase/productUsecase"
 )
 
 func SetUpHarryShop () harryShop.HarryShopClientInterface{

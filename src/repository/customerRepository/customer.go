@@ -1,7 +1,7 @@
 package customerRepository
 
 import (
-	"github.com/tkhamsila/shibabookbackend/src/domains/customerDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/customerDomain"
 	"context"
 )
 

@@ -1,18 +1,18 @@
 package main
 
 import (
-	"github.com/tkhamsila/shibabookbackend/src/app"
-	"github.com/tkhamsila/shibabookbackend/src/configs"
-	customerHandler "github.com/tkhamsila/shibabookbackend/src/handler/customerHandler/http"
-	orderHandler "github.com/tkhamsila/shibabookbackend/src/handler/orderHandler/http"
-	productHandler "github.com/tkhamsila/shibabookbackend/src/handler/productHandler/http"
-	customerRepo "github.com/tkhamsila/shibabookbackend/src/repository/customerRepository/mongo"
-	invoiceRepo "github.com/tkhamsila/shibabookbackend/src/repository/invoiceRepository/mongo"
-	orderRepo "github.com/tkhamsila/shibabookbackend/src/repository/orderRepository/mongo"
-	productRepo "github.com/tkhamsila/shibabookbackend/src/repository/productRepository/mongo"
-	"github.com/tkhamsila/shibabookbackend/src/usecase/customerUsecase"
-	"github.com/tkhamsila/shibabookbackend/src/usecase/orderUsecase"
-	"github.com/tkhamsila/shibabookbackend/src/usecase/productUsecase"
+	"github.com/oommi04/shibabookbackend/src/app"
+	"github.com/oommi04/shibabookbackend/src/configs"
+	customerHandler "github.com/oommi04/shibabookbackend/src/handler/customerHandler/http"
+	orderHandler "github.com/oommi04/shibabookbackend/src/handler/orderHandler/http"
+	productHandler "github.com/oommi04/shibabookbackend/src/handler/productHandler/http"
+	customerRepo "github.com/oommi04/shibabookbackend/src/repository/customerRepository/mongo"
+	invoiceRepo "github.com/oommi04/shibabookbackend/src/repository/invoiceRepository/mongo"
+	orderRepo "github.com/oommi04/shibabookbackend/src/repository/orderRepository/mongo"
+	productRepo "github.com/oommi04/shibabookbackend/src/repository/productRepository/mongo"
+	"github.com/oommi04/shibabookbackend/src/usecase/customerUsecase"
+	"github.com/oommi04/shibabookbackend/src/usecase/orderUsecase"
+	"github.com/oommi04/shibabookbackend/src/usecase/productUsecase"
 	"time"
 )
 

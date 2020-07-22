@@ -2,8 +2,8 @@ package harryShop
 
 import (
 	"encoding/json"
-	"github.com/tkhamsila/shibabookbackend/src/domains/productDomain"
-	"github.com/tkhamsila/shibabookbackend/src/utils/common"
+	"github.com/oommi04/shibabookbackend/src/domains/productDomain"
+	"github.com/oommi04/shibabookbackend/src/utils/common"
 	"github.com/valyala/fasthttp"
 	"net/http"
 	"time"

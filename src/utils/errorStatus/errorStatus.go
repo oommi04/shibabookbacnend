@@ -1,8 +1,8 @@
 package errorStatus
 
 import (
-	"github.com/tkhamsila/backendtest/src/domains/doscg"
-	"github.com/tkhamsila/backendtest/src/external/harryShop"
+	"github.com/oommi04/backendtest/src/domains/doscg"
+	"github.com/oommi04/backendtest/src/external/harryShop"
 	"net/http"
 )
 

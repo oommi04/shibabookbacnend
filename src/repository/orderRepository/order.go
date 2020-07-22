@@ -1,7 +1,7 @@
 package orderRepository
 
 import (
-	"github.com/tkhamsila/shibabookbackend/src/domains/orderDomain"
+	"github.com/oommi04/shibabookbackend/src/domains/orderDomain"
 	"context"
 )
 

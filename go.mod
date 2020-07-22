@@ -1,4 +1,4 @@
-module github.com/tkhamsila/shibabookbackend
+module github.com/oommi04/shibabookbackend
 
 go 1.13
 

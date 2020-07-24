@@ -17,7 +17,7 @@ type productUsecase struct {
 	contextTimeout time.Duration
 }
 
-func NewProductUsecase(p _productRepository.ProductRepositoryInterface, timout time.Duration) ProductUsecaseInterface {
+func New(p _productRepository.ProductRepositoryInterface, timout time.Duration) ProductUsecaseInterface {
 
 	return &productUsecase{p, timout}
 }

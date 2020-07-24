@@ -18,7 +18,7 @@ type customerUsecase struct {
 	contextTimeout time.Duration
 }
 
-func NewProductUsecase(p _customerRepository.CustomerRepositoryInterface, timout time.Duration) CustomerUsecaseInterface {
+func New(p _customerRepository.CustomerRepositoryInterface, timout time.Duration) CustomerUsecaseInterface {
 	return &customerUsecase{p, timout}
 }
 

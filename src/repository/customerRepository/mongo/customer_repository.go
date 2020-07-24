@@ -25,7 +25,7 @@ type customerRepository struct {
 	Collection *mongo.Collection
 }
 
-func NewCustomerRepository(d *mongo.Database) _customerRepository.CustomerRepositoryInterface {
+func New(d *mongo.Database) _customerRepository.CustomerRepositoryInterface {
 	collection := d.Collection("customers")
 	return &customerRepository{collection}
 }

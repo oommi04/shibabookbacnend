@@ -24,18 +24,18 @@ func main() {
 	mdb := app.SetupMongo()
 	timeOutContext := 5 * time.Second
 
-	productRepoInstance := productRepo.NewProductRepository(mdb)
-	productUsecaseInstance := productUsecase.NewProductUsecase(productRepoInstance, timeOutContext)
+	productRepoInstance := productRepo.New(mdb)
+	productUsecaseInstance := productUsecase.New(productRepoInstance, timeOutContext)
 	productHandler.Init(e,productUsecaseInstance)
 
-	customerRepoInstance := customerRepo.NewCustomerRepository(mdb)
-	customerUsecaseInstance := customerUsecase.NewProductUsecase(customerRepoInstance,timeOutContext)
+	customerRepoInstance := customerRepo.New(mdb)
+	customerUsecaseInstance := customerUsecase.New(customerRepoInstance,timeOutContext)
 	customerHandler.Init(e,customerUsecaseInstance)
 
-	invoiceRepoInstance := invoiceRepo.NewInvoiceRepository(mdb)
+	invoiceRepoInstance := invoiceRepo.New(mdb)
 
-	orderRepoInstance := orderRepo.NewProductRepository(mdb)
-	orderUsecaseInstance := orderUsecase.NewProductUsecase(orderRepoInstance,productRepoInstance, invoiceRepoInstance,customerUsecaseInstance ,timeOutContext)
+	orderRepoInstance := orderRepo.New(mdb)
+	orderUsecaseInstance := orderUsecase.New(orderRepoInstance,productRepoInstance, invoiceRepoInstance,customerUsecaseInstance ,timeOutContext)
 	orderHandler.Init(e,orderUsecaseInstance)
 
 	hs := app.SetUpHarryShop()

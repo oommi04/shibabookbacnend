@@ -38,7 +38,7 @@ type orderRepository struct {
 	Collection *mongo.Collection
 }
 
-func NewProductRepository(d *mongo.Database) _orderRepository.OrderRepositoryInterface {
+func New(d *mongo.Database) _orderRepository.OrderRepositoryInterface {
 	collection := d.Collection("orders")
 	return &orderRepository{collection}
 }

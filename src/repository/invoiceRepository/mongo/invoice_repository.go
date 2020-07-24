@@ -22,7 +22,7 @@ type invoiceRepository struct {
 	Collection *mongo.Collection
 }
 
-func NewInvoiceRepository(d *mongo.Database) _invoiceRepository.InvoiceRepositoryInterface {
+func New(d *mongo.Database) _invoiceRepository.InvoiceRepositoryInterface {
 	collection := d.Collection("invoices")
 	return &invoiceRepository{collection}
 }

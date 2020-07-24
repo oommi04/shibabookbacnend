@@ -26,7 +26,7 @@ type orderUsecase struct {
 	contextTimeout  time.Duration
 }
 
-func NewProductUsecase(o _orderRepository.OrderRepositoryInterface, p _productRepository.ProductRepositoryInterface, i _invoiceRepository.InvoiceRepositoryInterface, c _customerUsecase.CustomerUsecaseInterface, timout time.Duration) OrderUsecaseInterface {
+func New(o _orderRepository.OrderRepositoryInterface, p _productRepository.ProductRepositoryInterface, i _invoiceRepository.InvoiceRepositoryInterface, c _customerUsecase.CustomerUsecaseInterface, timout time.Duration) OrderUsecaseInterface {
 	return &orderUsecase{o, p, i, c, timout}
 }
 

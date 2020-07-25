@@ -14,6 +14,7 @@ import (
 	"github.com/oommi04/shibabookbackend/src/usecase/orderUsecase"
 	"github.com/oommi04/shibabookbackend/src/usecase/productUsecase"
 	"time"
+	"context"
 )
 
 func main() {
@@ -21,8 +22,10 @@ func main() {
 
 	e := app.SetupHttp(cfg)
 
-	mdb := app.SetupMongo()
 	timeOutContext := 5 * time.Second
+	ctx, _ := context.WithTimeout(context.Background(), timeOutContext)
+	mdb, cmdb := app.SetupMongo(ctx)
+	defer cmdb.Disconnect(ctx)
 
 	productRepoInstance := productRepo.New(mdb)
 	productUsecaseInstance := productUsecase.New(productRepoInstance, timeOutContext)

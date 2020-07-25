@@ -8,7 +8,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"net/http"
-	"time"
 )
 
 func SetupHttp(c *configs.Configs) *echo.Echo {
@@ -23,14 +22,12 @@ func SetupHttp(c *configs.Configs) *echo.Echo {
 	return e
 }
 
-func SetupMongo() *mongo.Database {
+func SetupMongo(ctx context.Context) (*mongo.Database, *mongo.Client) {
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	err = client.Connect(ctx)
 	if err != nil {
 		panic(err)
 	}
-	//defer client.Disconnect(ctx)
 	database := client.Database("shibaBookShop")
-	return database
+	return database, client
 }
